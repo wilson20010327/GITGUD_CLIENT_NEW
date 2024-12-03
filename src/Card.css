@@ -1,0 +1,45 @@
+
+.card h2,
+.card p,
+.card ul {
+  text-align: left;
+}
+.card p{
+  display: flex;
+  flex-direction: row;
+
+}
+.card h2 {
+  margin-top: 0;
+}
+.card h2:hover{
+  opacity: 0.5;
+}
+.card button {
+  width: 100%;
+  font-weight: bold;
+  padding: .8em 1em;
+}
+.out {
+  outline: none; /* Removes the default outline */
+  border: 1px solid #ccc; /* Optional: Add a subtle border for better visibility */
+  padding: 5px;
+  border-radius: 4px; /* Optional: Rounds the corners for a modern look */
+}
+
+.out:focus {
+  outline: none; /* Ensures no outline appears when the input is focused */
+  border: 1px solid #666; /* Optional: Change the border color on focus */
+}
+
+.nonout {
+  outline: none; /* Removes the default outline */
+  border: none; /* Optional: Add a subtle border for better visibility */
+  padding: 5px;
+
+}
+
+.nonout:focus {
+  outline: none; /* Ensures no outline appears when the input is focused */
+  border: none; /* Optional: Change the border color on focus */
+}
