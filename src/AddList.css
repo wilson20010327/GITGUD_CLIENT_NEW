@@ -1,22 +1,19 @@
 
-.card h2,
-.card h3,
-.card p,
-.card ul {
+.add h2,
+.add p,
+.add ul {
   text-align: left;
 }
-.card p{
+.add p{
   display: flex;
   flex-direction: row;
 
 }
-.card h2,.card h3 {
+.add h2 {
   margin-top: 0;
 }
-.card h2:hover{
-  opacity: 0.5;
-}
-.card button {
+
+.add button {
   width: 100%;
   font-weight: bold;
   padding: .8em 1em;

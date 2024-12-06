@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import './Card.css';
 import 'leaflet/dist/leaflet.css';
 import { updateResourceAsync, deleteResourceAsync } from "./state/resources/resourcesSlice";
+const fix_column=['id','City','Address','mappoint']
 const Card = forwardRef(({ type,map,defaultCenter, item, setloading }, ref) => {
   const dispatch = useDispatch()
   const col_name = Object.keys(item)
@@ -67,19 +68,20 @@ const Card = forwardRef(({ type,map,defaultCenter, item, setloading }, ref) => {
     <div className="card"  >
       <h2 onClick={() => { handleOnFlyTo() }}>{formData.Name} </h2>
       <p>
-        {formData.Address}
+      {type}
       </p>
       <ul>
         {Object.keys(formData).map((key, i) => (
           <li>
             {key}:
             <input
-              className={((key !== 'id') ? edit : true) ? 'nonout' : "out"}
+              className={((fix_column.includes(key)) ?true :edit  ) ? 'nonout' : "out"}
               type="text"
               value={formData[key]}
               onChange={(e) => handleChange(key, e.target.value)}
-              readOnly={(key !== 'id') ? edit : true}
+              readOnly={(fix_column.includes(key)) ?true  :edit }
               ref={localRef}
+              style={{width:'100%'}}
             />
           </li>
         ))}

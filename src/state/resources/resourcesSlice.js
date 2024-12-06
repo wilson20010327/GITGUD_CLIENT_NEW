@@ -112,9 +112,7 @@ export const setResourceAsync = createAsyncThunk(
     "resources/setResourceAsync",
     async (resourcesType) => {
         try {
-
             const url = "http://127.0.0.1:8082/get/" + resourcesType;
-
             // Replace with your actual API endpoint
             const response = await fetch(url, {
                 method: "GET",
