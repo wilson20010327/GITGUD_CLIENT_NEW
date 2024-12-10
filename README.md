@@ -2,9 +2,25 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 ## Setup Backend 
-* Need to first build the GitGud service
-```
+1. Need to first build the GitGud service or make sure GitGud service is available
+2. Creaete .env file (copy the sample.env and filled in the secret key and ip)
+3. check python dependence( in requirement.txt) and build the backend of client 
+```shell
 python ./backend/server.py
+```
+## Setup Frontend
+1. Check node.js available
+2. download the relative package through package manager npm or yarn
+```shell
+npm install
+```
+or
+```shell
+yarn
+```
+3. run the frontend 
+```shell
+npm start
 ```
 ## Available Scripts
 

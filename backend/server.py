@@ -13,9 +13,9 @@ geolocator = Nominatim(user_agent="myGeocoder")
 key_order = ["id", "Name", "City"]
 GET_KEY=os.getenv("GET_KEY")
 MODIFY_KEY=os.getenv("MODIFY_KEY")
-ip=""
+ip=os.getenv("SERVICE_IP")
 def getresources(category):
-    url = f"http://0.0.0.0:8080/resources/{category.lower()}/getAll"
+    url = f"http://{ip}:8080/resources/{category.lower()}/getAll"
     headers = {
         "Authorization": "Bearer "+GET_KEY
     }
@@ -43,7 +43,7 @@ def getresources(category):
         print(f"Error fetching data from API: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 def updateresources(category):
-    url = f"http://0.0.0.0:8080/resources/{category.lower()}/update"
+    url = f"http://{ip}:8080/resources/{category.lower()}/update"
     headers = {
         "Authorization": "Bearer "+MODIFY_KEY
     }
@@ -62,7 +62,7 @@ def updateresources(category):
         print(f"Error fetching data from API: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500
 def addresources(category):
-    url = f"http://0.0.0.0:8080/resources/{category.lower()}/add"
+    url = f"http://{ip}:8080/resources/{category.lower()}/add"
     headers = {
         "Authorization": "Bearer "+MODIFY_KEY
     }
@@ -81,7 +81,7 @@ def addresources(category):
         print(f"Error fetching data from API: {e}")
         return jsonify({"status": "error", "message": str(e)}), 500    
 def deletesources(category):
-    url = f"http://0.0.0.0:8080/resources/{category.lower()}/delete"
+    url = f"http://{ip}:8080/resources/{category.lower()}/delete"
     headers = {
         "Authorization": "Bearer "+MODIFY_KEY
     }
