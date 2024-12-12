@@ -22,7 +22,7 @@ const AddList = ({resourcetype, format, setloading }) => {
         try {
           // Replace with your actual API endpoint
           console.log(formData)
-          const response = await fetch("http://127.0.0.1:8082/add/" + resourcetype, {
+          const response = await fetch("http://13.115.67.82:8082/add/" + resourcetype, {
               method: "POST",
               headers: {
                   "Content-Type": "application/json", // Set the content type

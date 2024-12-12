@@ -85,7 +85,7 @@ export const updateResourceAsync = createAsyncThunk(
             delete newData.mappoint;
             delete newData.Catagory;
             console.log(newData)
-            const response = await fetch("http://127.0.0.1:8082/update/" + resourcesType, {
+            const response = await fetch("http://13.115.67.82:8082/update/" + resourcesType, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json", // Set the content type
@@ -112,7 +112,7 @@ export const setResourceAsync = createAsyncThunk(
     "resources/setResourceAsync",
     async (resourcesType) => {
         try {
-            const url = "http://127.0.0.1:8082/get/" + resourcesType;
+            const url = "http://13.115.67.82:8082/get/" + resourcesType;
             // Replace with your actual API endpoint
             const response = await fetch(url, {
                 method: "GET",
@@ -139,7 +139,7 @@ export const deleteResourceAsync = createAsyncThunk(
         try {
             const newData = { "id": id }
             console.log(resourcesType)
-            const url = "http://127.0.0.1:8082/delete/" + resourcesType;
+            const url = "http://13.115.67.82:8082/delete/" + resourcesType;
 
             // Replace with your actual API endpoint
             const response = await fetch(url, {
