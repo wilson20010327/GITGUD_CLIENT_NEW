@@ -188,7 +188,7 @@ function App() {
           );
         })():
         resources.map((item,index)=>(
-        <AddList resourcetype={item} format={add_format[item]} setloading={setInitialized}/> )
+        <AddList resourcetype={item} format={add_format[item]} setloading={setLoading}/> )
       )}
       </div>
     </div>

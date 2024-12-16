@@ -1,9 +1,11 @@
 import React, { useState, forwardRef, useImperativeHandle, useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { setResourceAsync } from './state/resources/resourcesSlice';
 import './AddList.css';
 import 'leaflet/dist/leaflet.css';
 const AddList = ({resourcetype, format, setloading }) => {
   const col_name = format
+  const dispatch=useDispatch()
   const [formData, setFormData] = useState(() => {
     const initialData = {};
     col_name.forEach((key, index) => {
@@ -45,8 +47,18 @@ const AddList = ({resourcetype, format, setloading }) => {
           return 'error';
       }
       };
+      setloading(true)
       await fetchResources();
-      setloading(false)
+      const updateData = async () => {
+        const resources = ['shelter', 'counseling', 'food', 'healthcare', 'outreach']
+        for (const item of resources) {
+          // Assuming 'shelter' is the value for each resource
+          await dispatch(setResourceAsync(item));
+        }
+        // Wait for the async dispatch
+        setloading(false); // Set loading to false once data is fetched
+      };
+      updateData();
   }
   return (
     <div className="add"  >
